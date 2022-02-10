@@ -1,0 +1,40 @@
+{
+	"short_name": "Walentynki",
+	"name": "Walentynki Liceum 31",
+	"scope": "/",
+	"start_url": "/",
+	"description": "Życzenia Walentynkowe uczniów i nauczycieli Liceum Ogólnokształcącego nr 31 w Krakowie.",
+	"display": "standalone",
+	"theme_color": "#ff0077",
+	"background_color": "#ffffff",
+	"icons": [
+		{
+			"src": "/icon.png",
+			"sizes": "256x256",
+			"type": "image/png"
+		},
+		{
+			"src": "/maskable-128.png",
+			"sizes": "128x128",
+			"purpose": "maskable",
+			"type": "image/png"
+		},
+		{
+			"src": "/maskable-512.png",
+			"sizes": "512x512",
+			"purpose": "maskable",
+			"type": "image/png"
+		},
+		{
+			"src": "/maskable-1024.png",
+			"sizes": "1024x1024",
+			"purpose": "maskable",
+			"type": "image/png"
+		},
+		{
+			"src": "/icon.svg",
+			"sizes": "any",
+			"type": "image/svg+xml"
+		}
+	]
+}

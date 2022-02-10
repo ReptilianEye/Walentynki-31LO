@@ -1,0 +1,94 @@
+:root {
+	font-size: 24px;
+
+	--fonts-text: Roboto, Segoe UI, Helvetica, sans-serif;
+	--weight-text: 400;
+	--fonts-bold: Roboto, Segoe UI, Helvetica, sans-serif;
+	--weight-bold: 700;
+	--fonts-italic: Roboto, Segoe UI, Helvetica, sans-serif;
+	--weight-italic: 400;
+	--fonts-mono: Roboto Mono, Consolas, Andale Mono, monospace;
+	--weight-mono: 400;
+	--fonts-heading: Inter, Roboto, Segoe UI, Helvetica, sans-serif;
+	--weight-heading: 600;
+
+	--animation-time-short: 100ms;
+	--animation-time-medium: 250ms;
+	--animation-time-long: 500ms;
+
+	--color-fg: #000000;
+	--color-bg: #ffffff;
+	--color-gray: #aaaaaa;
+	--color-primary: #ff0077;
+	--color-info: #0073e5;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	:root {
+		--animation-time-short: 0;
+		--animation-time-medium: 0;
+		--animation-time-long: 0;
+	}
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+	font-size: 1rem;
+	min-width: 300px;
+	height: 100%;
+	color: var(--color-fg);
+	background-color: var(--color-bg);
+}
+
+p,
+li,
+span {
+	font-family: var(--fonts-text);
+	font-weight: var(--weight-text);
+}
+
+a {
+	color: var(--color-info);
+	font-family: var(--text-fonts);
+	font-weight: var(--text-weight);
+	text-decoration: underline;
+	text-decoration-color: transparent;
+	transition: text-decoration-color var(--animation-time-medium);
+}
+
+a:hover {
+	text-decoration-color: var(--color-info);
+}
+
+b,
+strong {
+	font-family: var(--fonts-bold);
+	font-weight: var(--weight-bold);
+}
+
+i,
+em {
+	font-family: var(--fonts-italic);
+	font-weight: var(--weight-italic);
+	font-style: italic;
+}
+
+h1 {
+	font-family: var(--fonts-heading);
+	font-weight: var(--weight-heading);
+	font-size: 1.75rem;
+}
+
+h2 {
+	font-family: var(--fonts-heading);
+	font-weight: var(--weight-heading);
+	font-size: 1.5rem;
+}
+
+h3 {
+	font-family: var(--fonts-heading);
+	font-weight: var(--weight-heading);
+	font-size: 1.2rem;
+}

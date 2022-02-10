@@ -1,0 +1,63 @@
+.message {
+	display: inline-grid;
+	min-width: 20rem;
+	max-width: 25rem;
+	min-height: 5rem;
+	margin: 2rem;
+	padding: 1rem;
+	border: 1px solid var(--color-fg);
+	border-radius: 1rem;
+	grid-template-columns: auto 1.5rem 3rem 1.5rem;
+	grid-template-rows: 1.5rem auto;
+	grid-template-areas: "recipient report hearts heart" "content content content content";
+	row-gap: 0.5rem;
+}
+
+.recipient {
+	grid-area: recipient;
+	text-align: start;
+	margin: auto 0.25rem;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+.heart {
+	grid-area: heart;
+}
+
+.report {
+	grid-area: report;
+}
+
+.hearts {
+	grid-area: hearts;
+	text-align: end;
+	margin: auto 0.25rem;
+	color: var(--color-primary);
+}
+
+.iconbutton {
+	width: 1.5rem;
+	height: 1.5rem;
+	background: none;
+	border: 1px solid var(--color-fg);
+	border-radius: 0.5rem;
+}
+
+.iconbutton:disabled {
+	opacity: 0.5;
+}
+
+.iconbuttonimg {
+	width: 1rem;
+	height: 1rem;
+	margin: 0;
+	padding: 0;
+}
+
+.content {
+	grid-area: content;
+	text-align: start;
+	margin: auto 0.25rem;
+}
