@@ -8,13 +8,11 @@ import { MessageForm } from "./MessageForm"
 const App = () => {
 	return (
 		<main className="app">
-			<main>
-				<Routes>
-					<Route path="/" element={<MessagesDisplay />} />
-					<Route path="/new" element={<MessageForm />} />
-					<Route path="/admin" element={<AdminDashboard />} />
-				</Routes>
-			</main>
+			<Routes>
+				<Route path="/" element={<MessagesDisplay />} />
+				<Route path="/new" element={<MessageForm />} />
+				<Route path="/admin" element={<AdminDashboard />} />
+			</Routes>
 		</main>
 	)
 }

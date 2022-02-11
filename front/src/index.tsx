@@ -6,7 +6,8 @@ import "./index.css"
 
 export type ID = string
 
-export const API_BASE = "https://walentynki.liceum31.workers.dev"
+export const API_BASE = "http://localhost:5000"
+// export const API_BASE = "https://walentynki.liceum31.workers.dev"
 
 ReactDOM.render(
 	<React.StrictMode>
