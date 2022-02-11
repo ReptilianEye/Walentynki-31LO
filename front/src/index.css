@@ -99,3 +99,21 @@ h3 {
 .decorative {
 	color: var(--color-primary);
 }
+
+@media (max-width: 760px) {
+	:root {
+		font-size: 16px;
+	}
+}
+
+@media (max-width: 470px) {
+	:root {
+		font-size: 12px;
+	}
+}
+
+@media (max-width: 370px) {
+	:root {
+		font-size: 10px;
+	}
+}
