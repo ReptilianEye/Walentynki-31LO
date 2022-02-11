@@ -40,6 +40,9 @@ body {
 	height: 100%;
 	color: var(--color-fg);
 	background-color: var(--color-bg);
+	background-image: url("../public/bg.svg");
+	background-size: calc(100vw / 6);
+	background-repeat: repeat;
 }
 
 p,
@@ -91,4 +94,8 @@ h3 {
 	font-family: var(--fonts-heading);
 	font-weight: var(--weight-heading);
 	font-size: 1.2rem;
+}
+
+.decorative {
+	color: var(--color-primary);
 }

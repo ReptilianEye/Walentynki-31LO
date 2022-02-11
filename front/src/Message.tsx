@@ -29,7 +29,9 @@ export const Message = (props: MessageInfo & MessageCallbacks) => {
 			<button
 				className="iconbutton report"
 				disabled={!reportable}
+				title={props.id}
 				onClick={() => {
+					navigator.clipboard.writeText(props.id)
 					setReportable(false)
 					props.reportCallback(props.id)
 				}}

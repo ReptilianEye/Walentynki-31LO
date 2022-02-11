@@ -1,16 +1,22 @@
 import React from "react"
+import { Routes, Route } from "react-router-dom"
 import { MessagesDisplay } from "./MessagesDisplay"
+import { AdminDashboard } from "./AdminDashboard"
 import "./App.css"
+import { MessageForm } from "./MessageForm"
 
-const App = () => (
-	<main className="app">
-		<h1 className="decorative">
-			Życzenia walentynkowe uczniów i nauczycieli Liceum
-			Ogólnokształcącego nr 31 w Krakowie.
-		</h1>
-
-		<MessagesDisplay />
-	</main>
-)
+const App = () => {
+	return (
+		<main className="app">
+			<main>
+				<Routes>
+					<Route path="/" element={<MessagesDisplay />} />
+					<Route path="/new" element={<MessageForm />} />
+					<Route path="/admin" element={<AdminDashboard />} />
+				</Routes>
+			</main>
+		</main>
+	)
+}
 
 export default App
