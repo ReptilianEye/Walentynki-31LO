@@ -261,7 +261,7 @@ const reportMessage = async (
 	const wasReported = msg.metadata?.isReported || false
 
 	// Save the updated message, setting it private if it was previously reported
-	MESSAGES.put(msg.value.id, JSON.stringify(msg.value), {
+	await MESSAGES.put(msg.value.id, JSON.stringify(msg.value), {
 		metadata: {
 			isReported: true,
 			isPublic: !wasReported && msg.metadata?.isPublic,
@@ -323,7 +323,7 @@ const heartMessage = async (
 	message.value.hearts = (message.value.hearts || 0) + 1
 
 	// Save updated message and respond with a success message
-	MESSAGES.put(message.value.id, JSON.stringify(message.value), {
+	await MESSAGES.put(message.value.id, JSON.stringify(message.value), {
 		metadata: message.metadata,
 	})
 
@@ -420,7 +420,7 @@ const approveMessage = async (
 	}
 
 	// Set message public and approved (unless it was just submitted)
-	MESSAGES.put(msg.value.id, JSON.stringify(msg.value), {
+	await MESSAGES.put(msg.value.id, JSON.stringify(msg.value), {
 		metadata: {
 			isPublic: true,
 			isApproved: !!msg.metadata?.isReported,
