@@ -91,6 +91,7 @@ const getMessages = async (): Promise<Response> => {
 
 	// Handle the edge case of no messages existing
 	if (!messageKeys) {
+		console.info("No messages found. This may be indicative of an error.")
 		return new Response(JSON.stringify([]), {
 			headers: { "Access-Control-Allow-Origin": "*" },
 		})
@@ -100,7 +101,13 @@ const getMessages = async (): Promise<Response> => {
 	const messages = await Promise.all(
 		messageKeys
 			.filter((k) => k.metadata?.isPublic === true)
-			.map(async (k) => await MESSAGES.get(k.name, "json"))
+			.map(
+				async (k) =>
+					await MESSAGES.get(k.name, "json").catch((r) => {
+						console.error(r)
+						return null
+					})
+			)
 	)
 
 	// Respond with an array of messages
@@ -141,7 +148,13 @@ const getReportedMessages = async (
 					k.metadata?.isReported === true ||
 					(!k.metadata?.isPublic && !k.metadata?.isApproved)
 			)
-			.map(async (k) => await MESSAGES.get(k.name, "json"))
+			.map(
+				async (k) =>
+					await MESSAGES.get(k.name, "json").catch((r) => {
+						console.error(r)
+						return null
+					})
+			)
 	)
 
 	// Respond with an array of messages
@@ -362,11 +375,9 @@ const removeMessage = async (
 	}
 
 	// Check if message exists
-	const message: MessageInfo | null = await MESSAGES.get(id, "json")
+	const message = await MESSAGES.get(id, "text")
 
-	console.log(
-		`${token.split(".")[0]} is deleting message ${message?.id} (${id}).`
-	)
+	console.log(`${token.split(".")[0]} is deleting message ${id}.`)
 
 	if (!message) {
 		return new Response(JSON.stringify({ success: false, id }), {
@@ -376,7 +387,7 @@ const removeMessage = async (
 	}
 
 	// Delete message
-	await MESSAGES.delete(message.id)
+	await MESSAGES.delete(id)
 
 	return new Response(JSON.stringify({ success: true }), {
 		headers: { "Access-Control-Allow-Origin": "*" },
