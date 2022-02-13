@@ -8,3 +8,7 @@
 	column-width: 25rem;
 	column-gap: 0;
 }
+
+.footer {
+	margin: 5rem auto auto;
+}
