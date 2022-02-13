@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { ReactComponent as HeartIcon } from "./icons/heart.svg"
+import { ReactComponent as SendIcon } from "./icons/send.svg"
 import { API_BASE } from "."
 import "./MessageForm.css"
 
@@ -56,10 +56,12 @@ export const MessageForm = () => {
 					onClick={() => {
 						submitMessage(recipient, content)
 						setRecipient("")
-						setContent("")
+						setContent(
+							"Twoja wiadomość została przyjęta do moderacji."
+						)
 					}}
 				>
-					<HeartIcon className="iconbuttonimg-large svgicon-large" />
+					<SendIcon className="iconbuttonimg-large svgicon-large" />
 				</button>
 			</div>
 		</>

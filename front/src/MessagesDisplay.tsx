@@ -47,24 +47,25 @@ export const MessagesDisplay = (props: {}) => {
 				</h1>
 			</header>
 
-			<div className="messages">
-				{showPrompt ? (
-					<Message
-						heartCallback={() => {
-							navigate("/new")
-						}}
-						reportCallback={() => {
-							setShowPrompt(false)
-						}}
-						id="00000000-0000-0000-0000-000000000000"
-						recipient="Hej!"
-						content="Kliknij na serce aby złożyć własne życzenia!"
-						hearts={"->" as any}
-					/>
-				) : (
-					<></>
-				)}
+			{showPrompt ? (
+				<Message
+					heartCallback={() => {
+						navigate("/new")
+					}}
+					reportCallback={() => {
+						setShowPrompt(false)
+					}}
+					id="00000000-0000-0000-0000-000000000000"
+					highlight={true}
+					recipient="Hej!"
+					content="Kliknij na serce aby złożyć własne życzenia!"
+					hearts={"->" as any}
+				/>
+			) : (
+				<></>
+			)}
 
+			<div className="messages">
 				{messages.map((message) => (
 					<Message
 						key={message.id}
@@ -86,6 +87,20 @@ export const MessagesDisplay = (props: {}) => {
 					/>
 				))}
 			</div>
+
+			<footer>
+				<p>
+					Strona zrobiona przez{" "}
+					<a href="mailto:jan.markiewicz@lo31.krakow.pl">
+						Jana Markiewicza
+					</a>{" "}
+					i{" "}
+					<a href="mailto:piotr.rzadkowski@lo31.krakow.pl">
+						Piotra Rzadkowskiego
+					</a>
+					.
+				</p>
+			</footer>
 		</>
 	)
 }

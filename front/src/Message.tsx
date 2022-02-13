@@ -4,13 +4,15 @@ import { ReactComponent as ReportIcon } from "./icons/report.svg"
 import { ID } from "./index"
 import "./Message.css"
 
-export const Message = (props: MessageInfo & MessageCallbacks) => {
+export const Message = (
+	props: MessageInfo & MessageProps & MessageCallbacks
+) => {
 	const [heartable, setHeartable] = useState(true)
 	const [reportable, setReportable] = useState(true)
 
 	return (
 		<div
-			className="message"
+			className={`message${props.highlight ? " highlight" : ""}`}
 			onClick={() => {
 				navigator.clipboard.writeText(props.id)
 			}}
@@ -53,6 +55,10 @@ export interface MessageInfo {
 	hearts?: number
 	recipient: string
 	content: string
+}
+
+export interface MessageProps {
+	highlight?: boolean
 }
 
 export interface MessageCallbacks {
