@@ -9,7 +9,12 @@ export const Message = (props: MessageInfo & MessageCallbacks) => {
 	const [reportable, setReportable] = useState(true)
 
 	return (
-		<div className="message">
+		<div
+			className="message"
+			onClick={() => {
+				navigator.clipboard.writeText(props.id)
+			}}
+		>
 			<b className="recipient" title={props.recipient}>
 				{props.recipient}
 			</b>
@@ -31,7 +36,6 @@ export const Message = (props: MessageInfo & MessageCallbacks) => {
 				disabled={!reportable}
 				title={props.id}
 				onClick={() => {
-					navigator.clipboard.writeText(props.id)
 					setReportable(false)
 					props.reportCallback(props.id)
 				}}

@@ -433,6 +433,45 @@ const approveMessage = async (
 	})
 }
 
+const privatiseMessage = async (
+	body: Promise<{ id: ID; token: string }>
+): Promise<Response> => {
+	const { id, token } = await body
+
+	// Check moderator token
+	if ((await verifyToken(token)) === "none") {
+		return new Response(JSON.stringify({ success: false }), {
+			status: 403,
+			headers: { "Access-Control-Allow-Origin": "*" },
+		})
+	}
+
+	// Get message info
+	const msg: KVNamespaceGetWithMetadataResult<MessageInfo, MessageMetadata> =
+		await MESSAGES.getWithMetadata(id, "json")
+
+	// Make sure message exists
+	if (!msg || !msg.value) {
+		return new Response(JSON.stringify({ success: false }), {
+			status: 404,
+			headers: { "Access-Control-Allow-Origin": "*" },
+		})
+	}
+
+	// Set message private and not approved
+	await MESSAGES.put(msg.value.id, JSON.stringify(msg.value), {
+		metadata: {
+			isPublic: false,
+			isApproved: false,
+			isReported: !!msg.metadata?.isReported,
+		},
+	})
+
+	return new Response(JSON.stringify({ success: true, id: msg.value.id }), {
+		headers: { "Access-Control-Allow-Origin": "*" },
+	})
+}
+
 const sendPreflight = async (): Promise<Response> =>
 	new Response(null, {
 		headers: {
@@ -480,6 +519,9 @@ addEventListener("fetch", (event: FetchEvent) => {
 		} else if (path === "/admin/remove") {
 			// Delete a message
 			event.respondWith(removeMessage(req.json()))
+		} else if (path === "/admin/privatise") {
+			// Make a message private
+			event.respondWith(privatiseMessage(req.json()))
 		} else if (path === "/admin/createMod") {
 			// Return a new moderator token
 			event.respondWith(makeMod(req.json()))

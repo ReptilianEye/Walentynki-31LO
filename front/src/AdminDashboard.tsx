@@ -116,6 +116,21 @@ export const AdminDashboard = (props: {}) => {
 						>
 							Delete
 						</button>
+						<button
+							onClick={() => {
+								fetch(API_BASE + "/admin/privatise", {
+									method: "POST",
+									body: JSON.stringify({
+										id: modMessage,
+										token,
+									}),
+								})
+									.then(console.debug)
+									.catch(console.error)
+							}}
+						>
+							Make private
+						</button>
 						{modMessageInfo ? (
 							<Message
 								{...modMessageInfo}
