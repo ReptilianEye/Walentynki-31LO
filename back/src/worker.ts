@@ -506,7 +506,7 @@ addEventListener("fetch", (event: FetchEvent) => {
 			event.respondWith(createMessage(req.json()))
 		} else if (path === "/report") {
 			// Collect a message report
-			event.respondWith(reportMessage(req.json()))
+			//// event.respondWith(reportMessage(req.json()))
 		} else if (path === "/heart") {
 			// Process a message being hearted
 			event.respondWith(heartMessage(req.json()))
