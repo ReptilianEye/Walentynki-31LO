@@ -8,7 +8,6 @@ export const Message = (
 	props: MessageInfo & MessageProps & MessageCallbacks
 ) => {
 	const [heartable, setHeartable] = useState(true)
-	const [reportable, setReportable] = useState(true)
 
 	return (
 		<div
@@ -34,11 +33,10 @@ export const Message = (
 			</button>
 
 			<button
+				disabled
 				className="iconbutton report"
-				disabled={!reportable}
 				title={props.id}
 				onClick={() => {
-					setReportable(false)
 					props.reportCallback(props.id)
 				}}
 			>
