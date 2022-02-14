@@ -92,7 +92,7 @@ export const MessagesDisplay = (props: {}) => {
 				<h1 className="decorative loading">Ładowanie walentynek ...</h1>
 			)}
 
-			<footer>
+			<footer className="footer">
 				<p>
 					Strona zrobiona przez{" "}
 					<a href="mailto:jan.markiewicz@lo31.krakow.pl">
@@ -101,6 +101,32 @@ export const MessagesDisplay = (props: {}) => {
 					i{" "}
 					<a href="mailto:piotr.rzadkowski@lo31.krakow.pl">
 						Piotra Rzadkowskiego
+					</a>
+					.
+				</p>
+				<p>
+					Zorganizowane przez{" "}
+					<a href="mailto:malgorzata.klasa@lo31.krakow.pl">
+						Małgorzatę Klasę
+					</a>
+					,{" "}
+					<a href="mailto:alicja.lubiczlisowska@lo31.krakow.pl">
+						Alicję Lubicz-Lisowską
+					</a>
+					,{" "}
+					<a href="mailto:katarzyna.jachimczak@lo31.krakow">
+						Katarzynę Jachimczak
+					</a>
+					, i{" "}
+					<a href="mailto:emilia.jachimczak@lo31.krakow.pl">
+						Emilię Jachimczak
+					</a>
+					.
+				</p>
+				<p>
+					Walentynki przesłane do i przez uczniów i nauczycieli{" "}
+					<a href="https://lo31.com/">
+						Liceum Ogólnokształcącego nr 31 w Krakowie
 					</a>
 					.
 				</p>
