@@ -8,3 +8,7 @@
 	column-width: 25rem;
 	column-gap: 0;
 }
+
+.loading {
+	margin: 5rem auto 15rem;
+}
