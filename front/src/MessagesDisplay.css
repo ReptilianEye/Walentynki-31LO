@@ -9,6 +9,10 @@
 	column-gap: 0;
 }
 
+.loading {
+	margin: 5rem auto 15rem;
+}
+
 .footer {
 	margin: 5rem auto auto;
 }

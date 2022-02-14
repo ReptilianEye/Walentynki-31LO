@@ -65,28 +65,32 @@ export const MessagesDisplay = (props: {}) => {
 				<></>
 			)}
 
-			<div className="messages">
-				{messages.map((message) => (
-					<Message
-						key={message.id}
-						heartCallback={(id) => {
-							heart(id)
-							setMessages(
-								messages.map((msg) => {
-									if (msg.id !== id) {
-										return msg
-									}
+			{messages.length > 1 ? (
+				<div className="messages">
+					{messages.map((message) => (
+						<Message
+							key={message.id}
+							heartCallback={(id) => {
+								heart(id)
+								setMessages(
+									messages.map((msg) => {
+										if (msg.id !== id) {
+											return msg
+										}
 
-									msg.hearts = (msg.hearts || 0) + 1
-									return msg
-								})
-							)
-						}}
-						reportCallback={report}
-						{...message}
-					/>
-				))}
-			</div>
+										msg.hearts = (msg.hearts || 0) + 1
+										return msg
+									})
+								)
+							}}
+							reportCallback={report}
+							{...message}
+						/>
+					))}
+				</div>
+			) : (
+				<h1 className="decorative loading">Ładowanie walentynek ...</h1>
+			)}
 
 			<footer className="footer">
 				<p>
