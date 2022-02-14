@@ -114,10 +114,14 @@ export const MessagesDisplay = (props: {}) => {
 						Alicję Lubicz-Lisowską
 					</a>
 					,{" "}
-					<a href="https://lo31.krakow.pl/index.php/dla-uczniow/samorzad">
-						Samorząd Uczniowski
+					<a href="mailto:katarzyna.jachimczak@lo31.krakow">
+						Katarzynę Jachimczak
 					</a>
-					, i <a href="https://lo31.com">innych</a>.
+					, i{" "}
+					<a href="mailto:emilia.jachimczak@lo31.krakow.pl">
+						Emilię Jachimczak
+					</a>
+					.
 				</p>
 				<p>
 					Walentynki przesłane do i przez uczniów i nauczycieli{" "}
