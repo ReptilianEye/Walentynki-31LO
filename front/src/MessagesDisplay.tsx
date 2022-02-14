@@ -106,10 +106,6 @@ export const MessagesDisplay = (props: {}) => {
 				</p>
 				<p>
 					Zorganizowane przez{" "}
-					<a href="mailto:malgorzata.klasa@lo31.krakow.pl">
-						Małgorzatę Klasę
-					</a>
-					,{" "}
 					<a href="mailto:alicja.lubiczlisowska@lo31.krakow.pl">
 						Alicję Lubicz-Lisowską
 					</a>
@@ -117,11 +113,11 @@ export const MessagesDisplay = (props: {}) => {
 					<a href="mailto:katarzyna.jachimczak@lo31.krakow">
 						Katarzynę Jachimczak
 					</a>
-					, i{" "}
+					,{" "}
 					<a href="mailto:emilia.jachimczak@lo31.krakow.pl">
 						Emilię Jachimczak
-					</a>
-					.
+					</a>{" "}
+					i innych.
 				</p>
 				<p>
 					Walentynki przesłane do i przez uczniów i nauczycieli{" "}
