@@ -124,7 +124,7 @@ export const MessagesDisplay = (props: {}) => {
 					<a href="mailto:emilia.jachimczak@lo31.krakow.pl">
 						Emilię Jachimczak
 					</a>{" "}
-					i innych.
+					i <a href="https://lo31.com">innych</a>.
 				</p>
 				<p>
 					Walentynki przesłane do i przez uczniów i nauczycieli{" "}
