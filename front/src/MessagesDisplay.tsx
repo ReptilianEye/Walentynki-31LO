@@ -45,6 +45,13 @@ export const MessagesDisplay = (props: {}) => {
 					Życzenia walentynkowe uczniów i nauczycieli Liceum
 					Ogólnokształcącego nr 31 w Krakowie.
 				</h1>
+				<p>
+					Jeśli chcecie zraportować walentynkę,{" "}
+					<a href="https://forms.gle/CGoRSDJxMai4LosR7">
+						prosimy o wypełnienie tego formularza
+					</a>
+					.
+				</p>
 			</header>
 
 			{showPrompt ? (
