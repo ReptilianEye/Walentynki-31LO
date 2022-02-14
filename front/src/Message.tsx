@@ -35,8 +35,7 @@ export const Message = (
 
 			<button
 				className="iconbutton report"
-				// disabled={!reportable}
-				disabled={!props.highlight}
+				disabled={!reportable}
 				title={props.id}
 				onClick={() => {
 					setReportable(false)
