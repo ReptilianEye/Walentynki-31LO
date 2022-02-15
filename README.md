@@ -8,7 +8,7 @@ The version here only contains a simplified, static frontend. For a version that
 
 The frontend (`/front`) is made using create-react-app with the intention of being deployed to Vercel.
 
-To run the frontend, use `yarn install` in `/front` to install all dependencies and `yarn start` to start a development server. There are three main parts: `/` (`MessageForm.tsx`) which displays all public messages, `/new` (`MessageForm.tsx`) which is used to submit new messages, and `/admin` (`AdminDashboard.tsx`) which is used to moderate new and reported messages.
+To run the frontend, use `yarn install` in `/front` to install all dependencies and `yarn start` to start a development server. In this version, there is only on main part: `/` (`MessageForm.tsx`) which displays all public messages.
 
 ## Attribution
 
